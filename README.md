@@ -18,7 +18,7 @@ where:
 
 - `min`: the minimum numeric value of the range
 - `max`: the maximum numeric value of the range
-- `colorStops`: a comma-separated list of colors (min. 2). May be any string that can be parsed by [Qix-'s color-string package](https://github.com/Qix-/color-string) as a color.
+- `colorStops`: a comma-separated list of colors (min. 2). May be any RGB(A) string that can be parsed by [Qix-'s color-string package](https://github.com/Qix-/color-string) as a color.
 
 For example:
 
