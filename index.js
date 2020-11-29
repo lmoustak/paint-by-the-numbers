@@ -1,4 +1,4 @@
-const colorString = require("color-string");
+const Color = require("color");
 
 class Painter {
   constructor(min, max, ...colorStops) {
@@ -20,15 +20,8 @@ class Painter {
     if (colorStops.length < 2) {
       throw new Error("Painter needs at least 2 colors!");
     }
-    this.colorStops = [];
-    for (let stop of colorStops) {
-      let rgbValue = colorString.get.rgb(stop);
-      if (rgbValue == null) {
-        throw new Error(`"${stop}" is not a valid color value!`);
-      }
 
-      this.colorStops.push(rgbValue);
-    }
+    this.colorStops = colorStops.map((stop) => Color(stop));
 
     this.segments = this.colorStops.length - 1;
   }
@@ -38,8 +31,18 @@ class Painter {
     let relativePct = (value - this.min) / this.range;
     let segment = Math.max(Math.ceil(relativePct * this.segments), 1);
 
-    let [minRed, minGreen, minBlue, minAlpha] = this.colorStops[segment - 1];
-    let [maxRed, maxGreen, maxBlue, maxAlpha] = this.colorStops[segment];
+    let minColor = this.colorStops[segment - 1];
+    let minRed = minColor.red();
+    let minGreen = minColor.green();
+    let minBlue = minColor.blue();
+    let minAlpha = minColor.alpha();
+
+    let maxColor = this.colorStops[segment];
+    let maxRed = maxColor.red();
+    let maxGreen = maxColor.green();
+    let maxBlue = maxColor.blue();
+    let maxAlpha = maxColor.alpha();
+
     let weight = relativePct * this.segments - (segment - 1);
 
     let r = Math.round(weight * maxRed + (1 - weight) * minRed);

@@ -1,6 +1,6 @@
 {
   "name": "paint-by-the-numbers",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Based on Microsoft Excel's \"Color Scales\" conditional formatting, returns a color from the linear gradient between 2 or more color endpoints depending on the value.",
   "main": "index.js",
   "scripts": {
@@ -18,6 +18,6 @@
   "author": "Laertes Moustakas <lmoustak@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "color-string": "^1.5.4"
+    "color": "^3.1.3"
   }
 }

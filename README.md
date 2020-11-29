@@ -18,7 +18,7 @@ where:
 
 - `min`: the minimum numeric value of the range
 - `max`: the maximum numeric value of the range
-- `colorStops`: a comma-separated list of colors (min. 2). May be any RGB(A) string that can be parsed by [Qix-'s color-string package](https://github.com/Qix-/color-string) as a color.
+- `colorStops`: a comma-separated list of colors (min. 2). May be any value that can be parsed by [Qix-'s color package](https://github.com/Qix-/color) as a color.
 
 For example:
 
@@ -55,4 +55,4 @@ then any value between 0 (or lower) and 50 will be in the linear gradient range 
 
 ## Credits
 
-Thanks to [Qix-](https://github.com/Qix-) for his [color-string](https://github.com/Qix-/color-string) node package.
+Thanks to [Qix-](https://github.com/Qix-) for his [color](https://github.com/Qix-/color) node package.
